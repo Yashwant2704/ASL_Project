@@ -80,9 +80,6 @@ function register() {
       })
 }
 
-// ... (rest of the code remains unchanged)
-
-
 // Set up our login function
 function login() {
   // Get all our input fields
@@ -107,10 +104,10 @@ function login() {
         var role = userData.role;
 
         // Redirect based on role
-        if (role === 'Doctor') {
+        if (role === 'Doctor'|| role === 'doctor') {
           // Redirect to doctor homepage
           window.location.href = "doctor_homepage.html";
-        } else if (role === 'Patient') {
+        } else if (role === 'Patient'|| role === 'patient') {
           // Redirect to patient homepage
           window.location.href = "homepage.html";
         } else {
