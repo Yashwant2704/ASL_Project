@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noble Hospital</title>
+         <!-- Cool Google Fonts -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+        <!-- Our stylesheet -->
+        <link rel="stylesheet" type="text/css" href="index.css">
+    </head>
+    <body>
+        <div id="content_container">
+            <div id="form_container">
+                <div id="form_header_container">
+                    <h2 id="form_header">Login or Register </h2>
+                </div>
+
+                <div id="form_content_container2">
+                    <div id="form_content_inner_container">
+                        <!-- <input type="text" id="full_name" placeholder="Your Full name"> -->
+                        <!-- <input type="email" id="email" placeholder="Email"> -->
+                        <!-- <input type="password" id="password" placeholder="New Password"> -->
+                        <!-- <input type="text" id="role" placeholder="Role (Doctor/Patient)"> -->
+                        <!-- <input type="text" id="purpose" placeholder="Purpose (Visit/Follow UP)"> -->
+                    
+                        <div id="button_container2">
+                            <button style="font-size:18px" onclick="redirect_to_login()">Login <i class="fa fa-sign-in"></i></button>
+                            <button style="font-size:18px" onclick="redirect_to_register()">Register <i class="fa fa-sign-in"></i></button>
+                            <div id = "form_header2"><br>Continue to noble hospital</div>
+                        </div>
+                    </div>
+                    
+            </div>
+        </div>
+    </body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="index.js"></script>
+
+</html>
