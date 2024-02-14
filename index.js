@@ -34,8 +34,16 @@ function register() {
     alert('Please check your password!!')
       return
   }
-  if (validate_field(full_name) == false || validate_field(role) == false || validate_field(purpose) == false) {
-      alert('One or More Extra Fields is Outta Line!!')
+  if (validate_field(full_name) == false) {
+      alert('Check your username!!')
+      return
+  }
+  else if (validate_field(email) == false) {
+      alert('Check your email!!')
+      return
+  }
+  else if (validate_field(password) == false) {
+      alert('Password cannot be empty!!')
       return
   }
 
