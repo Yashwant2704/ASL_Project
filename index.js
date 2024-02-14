@@ -20,7 +20,7 @@ function register() {
   email = document.getElementById('email').value
   password = document.getElementById('password').value
   full_name = document.getElementById('full_name').value
-  purpose = document.getElementById('purpose').value
+  role = document.getElementById('purpose').value
 
   // Validate input fields
   if (validate_email(email) == false)
