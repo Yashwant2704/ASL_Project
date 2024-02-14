@@ -69,7 +69,8 @@ function register() {
           database_ref.child('users/' + user.uid).set(user_data);
 
           // Done
-          alert('User Created!!');
+          alert('User Created!! You can now login');
+          redirect_to_login();
       })
       .catch(function (error) {
           // Firebase will use this to alert of its errors
