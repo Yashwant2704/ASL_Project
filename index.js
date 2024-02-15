@@ -16,64 +16,62 @@ const database = firebase.database()
 
 function register() {
   // Get all our input fields
-  email = document.getElementById('email').value
-  password = document.getElementById('password').value
-  full_name = document.getElementById('full_name').value
-  role = document.getElementById('role').value
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var full_name = document.getElementById('full_name').value;
+  var role = document.getElementById('role').value;
 
   // Validate input fields
-  if (validate_email(email) == false)
-  {
-    alert('Please check your email!!')
-      return
-      // Don't continue running the code
+  if (!validate_email(email)) {
+    alert('Please enter a valid email address.');
+    return;
   }
-  else if(validate_password(password) == false) 
-  {
-    alert('Please check your password!!')
-      return
+  if (!validate_password(password)) {
+    alert('Password must be at least 6 characters long.');
+    return;
   }
-  if (validate_field(full_name) == false) {
-      alert('Check your username!!')
-      return
+  if (!validate_field(full_name)) {
+    alert('Please enter your full name.');
+    return;
   }
-  else if (validate_field(password) == false) {
-      alert('Password cannot be empty!!')
-      return
+  if (!validate_field(role)) {
+    alert('Please enter your role.');
+    return;
   }
 
   // Move on with Auth
   auth.createUserWithEmailAndPassword(email, password)
-      .then(function () {
-          // Declare user variable
-          var user = auth.currentUser;
+    .then(function (userCredential) {
+      // Declare user variable
+      var user = userCredential.user;
 
-          // Add this user to Firebase Database
-          var database_ref = database.ref('users/' + user.uid);
+      // Add this user to Firebase Database
+      var database_ref = database.ref('users/' + user.uid);
 
-          // Create User data with both date and time
-          var user_data = {
-              email: email,
-              full_name: full_name,
-              role: role,
-              last_login: new Date().toLocaleString() // Include both date and time
-          };
+      // Create User data with both date and time
+      var user_data = {
+        email: email,
+        full_name: full_name,
+        role: role,
+        last_login: new Date().toLocaleString() // Include both date and time
+      };
 
-          // Push to Firebase Database
-          database_ref.set(user_data);
+      // Push to Firebase Database
+      database_ref.set(user_data);
 
-          // Done
-          alert('User Created!! You can now login');
-          redirect_to_login();
-      })
-      .catch(function (error) {
-          // Firebase will use this to alert of its errors
-          var error_code = error.code
-          var error_message = error.message
+      // Done
+      alert('User Created!! You can now login');
+      redirect_to_login();
+    })
+    .catch(function (error) {
+      // Firebase will use this to alert of its errors
+      var errorCode = error.code;
+      var errorMessage = error.message;
 
-          alert(error_message)
-      })
+      alert(errorMessage);
+    });
 }
+
 
 
 // Set up our login function
