@@ -37,10 +37,6 @@ function register() {
       alert('Check your username!!')
       return
   }
-  else if (validate_field(email) == false) {
-      alert('Check your email!!')
-      return
-  }
   else if (validate_field(password) == false) {
       alert('Password cannot be empty!!')
       return
