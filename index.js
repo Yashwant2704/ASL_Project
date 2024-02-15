@@ -49,7 +49,7 @@ function register() {
           var user = auth.currentUser;
 
           // Add this user to Firebase Database
-          var database_ref = database.ref();
+          var database_ref = database.ref('users/' + user.uid);
 
           // Create User data with both date and time
           var user_data = {
@@ -60,7 +60,7 @@ function register() {
           };
 
           // Push to Firebase Database
-          database_ref.child('users/' + user.uid).set(user_data);
+          database_ref.set(user_data);
 
           // Done
           alert('User Created!! You can now login');
