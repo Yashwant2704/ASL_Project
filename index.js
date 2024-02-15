@@ -98,8 +98,13 @@ function login() {
       // Declare user variable
       var user = auth.currentUser;
 
-      // Retrieve user data from Firebase Database
+      // Update last login time in Firebase Database
       var database_ref = database.ref('users/' + user.uid);
+      database_ref.update({
+        last_login: new Date().toLocaleString()
+      });
+
+      // Retrieve user data from Firebase Database
       database_ref.once('value', function(snapshot) {
         var userData = snapshot.val();
         var role = userData.role;
@@ -125,6 +130,7 @@ function login() {
       alert(error_message);
     });
 }
+
 
 
   
