@@ -14,7 +14,6 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth()
 const database = firebase.database()
 
-// Set up our register function
 function register() {
   // Get all our input fields
   email = document.getElementById('email').value
@@ -61,7 +60,6 @@ function register() {
               email: email,
               full_name: full_name,
               role: role,
-              purpose: purpose,
               last_login: new Date().toLocaleString() // Include both date and time
           };
 
@@ -80,6 +78,7 @@ function register() {
           alert(error_message)
       })
 }
+
 
 // Set up our login function
 function login() {
