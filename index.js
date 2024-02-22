@@ -132,3 +132,21 @@ function redirect_to_login() {
 function redirect_to_register() {
   window.location.href = "register.html";
 }
+
+// Password reset function
+function resetPassword() {
+  var email = document.getElementById('email').value;
+
+  if (!validate_email(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  auth.sendPasswordResetEmail(email)
+    .then(function () {
+      alert('Password reset email sent! Please check your email.');
+    })
+    .catch(function (error) {
+      alert('Error resetting password: ' + error.message);
+    });
+}
