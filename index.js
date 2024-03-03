@@ -88,7 +88,12 @@ function login() {
           .then(function(snapshot) {
             var userData = snapshot.val();
             var role = userData.role;
+            document.getElementById("button_text").classList.add("hidden");
+    document.getElementById("button_spinner").classList.remove("hidden");
 
+    // Perform login process
+    // For demonstration purposes, I'm using a setTimeout to simulate a login process
+    setTimeout(() => {
             if (role === 'Doctor' || role === 'doctor') {
               window.location.href = "doctor_homepage.html";
             } else if (role === 'Patient' || role === 'patient') {
@@ -96,6 +101,7 @@ function login() {
             } else {
               alert("Unknown role: " + role);
             }
+          }, 1000); // Change 2000 to the duration of your login process in milliseconds
           })
           .catch(function(error) {
             alert('Error retrieving user data: ' + error.message);
