@@ -126,6 +126,27 @@ input {
     transition: background-color 0.3s;
 }
 
+#login_button {
+    position: relative;
+}
+
+#button_spinner {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.hidden {
+    display: none;
+}
+
+#button_text {
+    display: inline-block;
+}
+
+
+
 #button_container button:hover {
     background-color: #45679e; /* Change color on hover */
 }
