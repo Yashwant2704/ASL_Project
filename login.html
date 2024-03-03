@@ -38,7 +38,13 @@
                     </div>
 
                     <div id="button_container">
-                        <button onclick="login()">Login</button>
+                        <button id="login_button" onclick="login()">
+                            <span id="button_text">Login</span>
+                            <span id="button_spinner" class="hidden">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                        
                     </div>
                     <a href="#" onclick="resetPassword()">Forgot Password?</a>
                 </div>
