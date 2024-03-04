@@ -85,8 +85,30 @@
         <a href="doctor_homepage.html">Home</a>
         <a href="appointments.html">Appointments</a>
         <a href="schedule.html">Schedule</a>
-        <a href="index.html">Log out</a>
+        <a href="#" onclick="logout()">Log out</a>
     </nav>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="index.js"></script>
+
+    <!-- Your custom scripts -->
+    <script>
+        document.getElementById("appointmentForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Appointment booked successfully!");
+            document.getElementById("appointmentForm").reset();
+        });
+    </script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (!user) {
+            // User is not logged in, redirect to login page
+            window.location.href = "login.html";
+          }
+        });
+    </script>
+    <script src="index.js"></script>
     <main>
         <h1 align="center">Welcome, Doctor!</h1>
         <h3 align="center">To view your appointments, please head to the Appointments Section</h3>
