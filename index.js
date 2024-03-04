@@ -139,6 +139,18 @@ function redirect_to_register() {
   window.location.href = "register.html";
 }
 
+// Logout function
+function logout() {
+  auth.signOut().then(function() {
+    // Sign-out successful.
+    window.location.href = "login.html";
+  }).catch(function(error) {
+    // An error happened.
+    console.error('Error logging out:', error.message);
+  });
+}
+
+
 // Password reset function
 function resetPassword() {
   var email = document.getElementById('email').value;
