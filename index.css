@@ -108,11 +108,14 @@ input {
     height: 40px;
     background-color: #5478B6;
     color: #fff;
-    margin-bottom: 10px; /* Add margin to separate buttons */
+    margin-bottom: 10px;
     border: none;
-    border-radius: 2%;
+    border-radius: 20%;
     cursor: pointer;
     transition: background-color 0.3s;
+    outline: none;
+    border: none;
+    border-radius: 8px;
 }
 #button_container2 button {
     width: 100%;
