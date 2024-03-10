@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Our stylesheet -->
@@ -35,6 +36,20 @@
                     <div class="input_container">
                         <i class="fas fa-lock"></i>
                         <input type="password" id="password" placeholder="Password">
+                    </div>
+                    <div class="input_field captch_box">
+                        <input type="text" value="" disabled />
+                        <button class="refresh_button">
+                            <i class="fa-solid fa-rotate-right"></i>
+                          </button>
+                      </div>
+                      <div class="input_field captch_input">
+                        <input type="text" placeholder="Enter captcha" />
+                      </div>
+                      <div class="message">Entered captcha is correct</div>
+                      <div class="input_field button disabled">
+                        <button>Submit Captcha</button>
+                      </div>
                     </div>
 
                     <div id="button_container">
