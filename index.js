@@ -39,6 +39,10 @@ function register() {
     alert('Please enter your role.');
     return;
   }
+  if (!submitBtnClick()) {
+    alert("Please check captcha and try again!");
+    return;
+  }
 
   auth.createUserWithEmailAndPassword(email, password)
     .then(function (userCredential) {
@@ -215,9 +219,11 @@ const submitBtnClick = () => {
   if (captchaInputBox.value === captchaText) {
     message.innerText = "Entered captcha is correct";
     message.style.color = "#826afb";
+    return 1;
   } else {
     message.innerText = "Entered captcha is not correct";
     message.style.color = "#FF2525";
+    return 0;
   }
 };
 
