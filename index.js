@@ -79,6 +79,12 @@ function login() {
     return;
   }
 
+  var captchaResult = submitBtnClick();
+  if (captchaResult !== 1) {
+    alert('Please check captcha and try again!');
+    return;
+  }
+
   auth.signInWithEmailAndPassword(email, password)
     .then(function () {
       var user = auth.currentUser;
@@ -93,19 +99,19 @@ function login() {
             var userData = snapshot.val();
             var role = userData.role;
             document.getElementById("button_text").classList.add("hidden");
-    document.getElementById("button_spinner").classList.remove("hidden");
+            document.getElementById("button_spinner").classList.remove("hidden");
 
-    // Perform login process
-    // For demonstration purposes, I'm using a setTimeout to simulate a login process
-    setTimeout(() => {
-            if (role === 'Doctor' || role === 'doctor') {
-              window.location.href = "doctor_homepage.html";
-            } else if (role === 'Patient' || role === 'patient') {
-              window.location.href = "homepage.html";
-            } else {
-              alert("Unknown role: " + role);
-            }
-          }, 1000); // Change 2000 to the duration of your login process in milliseconds
+            // Perform login process
+            // For demonstration purposes, I'm using a setTimeout to simulate a login process
+            setTimeout(() => {
+              if (role === 'Doctor' || role === 'doctor') {
+                window.location.href = "doctor_homepage.html";
+              } else if (role === 'Patient' || role === 'patient') {
+                window.location.href = "homepage.html";
+              } else {
+                alert("Unknown role: " + role);
+              }
+            }, 1000); // Change 2000 to the duration of your login process in milliseconds
           })
           .catch(function(error) {
             alert('Error retrieving user data: ' + error.message);
@@ -119,6 +125,7 @@ function login() {
       alert('Error signing in: ' + error.message);
     });
 }
+
 
 // Validation functions
 function validate_email(email) {
