@@ -39,10 +39,6 @@ function register() {
     alert('Please enter your role.');
     return;
   }
-  if (!submitBtnClick()) {
-    alert("Please check captcha and try again!");
-    return;
-  }
 
   auth.createUserWithEmailAndPassword(email, password)
     .then(function (userCredential) {
